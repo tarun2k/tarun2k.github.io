@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+    <style>
+        /* Style for the typewriter effect */
+        #lead-content h2 {
+            font-family: monospace;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto 20px; /* Add bottom margin for spacing */
+            letter-spacing: .15em;
+        }
+    
+        /* Blinking cursor */
+        .blink {
+            animation: blink-caret .75s step-end infinite;
+        }
+    
+        /* Keyframes for the blinking cursor */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+
+        /* Style for the circular image with 3D effect */
+        #profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 20px; /* Center the image and add bottom margin */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* 3D shadow effect */
+            border: 3px solid #fff; /* White border for 3D effect */
+        }
+
+        /* Container for the lead content */
+        #lead-content {
+            text-align: center; /* Center the text content */
+        }
+    </style>
+</head>
+<body>
+  <div id="lead">
+      <div id="lead-content">
+          <img src="images/profile_pic.jpg" alt="Your Name" id="profile-image">
+          <h1>Tarun Arora</h1>
+          <h2 id="typewriter-header" class="blink"></h2>
+          <a href="Resume_TarunArora.pdf" class="btn-rounded-white">Download Resume</a>
+      </div>
+      <!-- End #lead-content -->
+  
+      <div id="lead-overlay"></div>
+  
+      <div id="lead-down">
+          <span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </span>
+      </div>
+      <!-- End #lead-down -->
+  </div>
+  <!-- End #lead -->
+  
+  <script>
+    // Texts to be displayed in the typewriter effect
+    var roles = ["Data Scientist", "Machine Learning Engineer", "Software Engineer", "Data Analyst"];
+    var currentRoleIndex = 0;
+    var currentRole = roles[currentRoleIndex];
+    var textIndex = 0;
+  
+    // Function to simulate typing effect
+    function typeWriter() {
+      if (textIndex <= currentRole.length) {
+        document.getElementById("typewriter-header").innerHTML = currentRole.substring(0, textIndex);
+        textIndex++;
+        setTimeout(typeWriter, 100); // Adjust typing speed here
+      } else {
+        setTimeout(eraseText, 1000); // Adjust pause before deletion here
+      }
+    }
+  
+    // Function to simulate deleting effect
+    function eraseText() {
+      if (textIndex >= 0) {
+        document.getElementById("typewriter-header").innerHTML = currentRole.substring(0, textIndex);
+        textIndex--;
+        setTimeout(eraseText, 50); // Adjust deletion speed here
+      } else {
+        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+        currentRole = roles[currentRoleIndex];
+        textIndex = 0; // Reset text index
+        setTimeout(typeWriter, 500); // Adjust pause between role changes here
+      }
+    }
+  
+    // Start the typewriter effect
+    typeWriter();
+  </script>  
+  <!-- End #lead -->
+
+<style>
+    #about p {
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="heading">About Me</h2>
+            </div>
+            <div class="col-md-8">
+                <p>
+                    I am a passionate and results-driven data professional with a diverse background in computer science, engineering physics, and extensive experience in machine learning and data analysis. With a Master's degree in Computer Science from the University of Chicago and a Bachelor's degree in Engineering Physics from Delhi Technological University, I bring a unique blend of technical expertise and innovative problem-solving skills to the table.
+                </p>
+                <p>
+                    My journey includes significant contributions to pioneering big data projects at Fermilab, where I was recognized for my exceptional work. From spearheading machine learning research at the Pritzker School of Molecular Engineering to leading data science initiatives at Fermi National Accelerator Laboratory and serving as a Data Analyst at EXL, I have consistently delivered impactful results.
+                </p>
+                <p>  
+                    Armed with proficiency in languages such as Python, Java, and Haskell, along with a toolkit encompassing TensorFlow, PyTorch, and Hadoop, I thrive in leveraging cutting-edge technologies to tackle complex challenges. Whether it's developing advanced machine learning algorithms or revolutionizing electrolyte property prediction for battery applications, I am dedicated to driving innovation and making a tangible difference.
+                </p>
+                <p>
+                    Explore my portfolio to discover more about my projects, skills, and contributions in the realm of data science and beyond.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>    <!-- End #about -->
+
+<style>
+    #experience-timeline img {
+        width: 100px; /* Adjust the width of the logos as needed */
+        height: auto; /* Automatically adjust the height to maintain aspect ratio */
+        display: inline-block; /* Ensure the logos are displayed in a block format */
+        margin-right: 10px; /* Add some space between the logo and the company name */
+        vertical-align: middle; /* Align the logos vertically with the text */
+    }
+</style>
+
+<div id="experience" class="background-alt">
+    <h2 class="heading">Experience</h2>
+    <div id="experience-timeline">
+        <div data-date="April 2024 – Present">
+            <img src="images/Exl_Logo.jpeg" alt="EXL Logo">
+            <h3>EXL</h3>
+            <h4>Data Analyst - Associate Consultant</h4>
+            <ul>
+
+                <li>
+                    Spearheaded comprehensive data analysis and cleansing initiatives on large-scale financial datasets for a globally renowned healthcare company, resulting in a 20% boost in data quality and accuracy, directly enhancing financial decision-making and operational efficiency.
+                </li>
+                <li>
+                    Developed a robust ETL pipeline in Alteryx for data extraction, cleaning, and loading from SAP tables, enhancing data integration processes, and ensuring the availability of high-quality data for analysis and reporting.                
+                </li>
+                <li>
+                    Engineered and implemented sophisticated machine learning algorithms, including Isolation Forest, to identify outliers and mitigate FCPA compliance risks, achieving a 25% improvement in fraud detection accuracy and safeguarding the company’s financial integrity.
+                </li>
+                <li>
+                    Authored detailed, actionable reports on FCPA risk findings, empowering auditors and key stakeholders with critical insights and fostering a culture of data-driven decision-making that strengthened overall corporate governance.
+                </li>
+                <li>
+                    Facilitated quick and efficient ad-hoc changes for diverse audits across multiple countries, reducing audit turnaround time by 30% and improving sample selection accuracy by 40%, thereby streamlining the auditing process and ensuring timely and precise compliance assessments.
+
+                </li>
+            </ul>
+        </div>
+
+        <div data-date="June 2023 – March 2024">
+            <img src="images/pme_logo.png" alt="Pritzker School Logo">
+            <h3>Amanchukwu Lab, Pritzker School of Molecular Engineering</h3>
+            <h4>Machine Learning Engineer</h4>
+
+            <ul>
+                <li>
+                    Directed the development of advanced machine learning and deep learning models to revolutionize electrolyte property prediction for cutting-edge battery applications, accelerating electrolyte discovery by 50%.
+                </li>
+                <li>
+                    Applied Principal Component Analysis (PCA) to extract 208 critical features from chemical formulas, enhancing computational efficiency by 30% while preserving essential information for accurate predictions.
+                </li>
+                <li>
+                    Conducted extensive hyper-parameter optimization, rigorously evaluating the Chemprop regressor against 5 baseline ML regressors, and achieved an exceptional R2 score of 0.94, demonstrating a 20% improvement in predictive accuracy over existing models.
+                </li>
+            </ul>
+        </div>
+
+        <div data-date="March 2023 – May 2023">
+            <img src="images/fermilab_logo2.jpeg" alt="Fermi Lab Logo">
+            <h3>Fermi National Accelerator Laboratory</h3>
+            <h4>Data Science Fellow</h4>
+            <ul>
+                <li>
+                    Collaborated within a team of four in pioneering the development of a state-of-the-art deep learning algorithm, achieving unparalleled accuracy in filtering neutrino events, and substantially advancing scientific research capabilities.
+                </li>
+                <li>
+                    Engineered a novel PyTorch data-loader to efficiently manage H5 files, transforming events into labeled images and optimizing data processing workflows, resulting in a 40% reduction in preprocessing time.
+                </li>
+                <li>
+                    Implemented a powerful deep learning classifier, yielding a 90% increase in filtration efficiency for neutrino events, thereby enhancing data quality and enabling more precise and reliable scientific analyses.
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- End #experience -->
+
+<style>
+    .education-block {
+        display: flex;
+        align-items: center; /* Align content vertically */
+        margin-bottom: 20px; /* Add some space between education blocks */
+    }
+
+
+    .education-block img {
+        width: 200px; /* Adjust the width of the logos as needed */
+        height: auto; /* Automatically adjust the height to maintain aspect ratio */
+        margin-right: 20px; /* Add some space between the logo and the education details */
+    }
+</style>
+
+<div id="education">
+    <h2 class="heading">Education</h2>
+    <div class="education-block">
+        <a href="https://www.uchicago.edu/" target="_blank"><img src="images/uchicago.png" alt="University of Chicago Logo"></a>
+        <div>
+            <h3>The University of Chicago</h3>
+            <span class="education-date">Sep 2022 - Mar 2024</span>
+            <h4>Master of Science in Computer Science with Specialization in Data Science</h4>
+            <ul>
+                <li><b>Relevant Coursework:</b> Functional Programming, Algorithms, Foundations of Computational Data Analysis, Machine Learning, Distributed Systems, Advanced Data Analytics, Computer Security, Reinforcement Learning, Generative AI</li>
+                <li>Acclaimed for remarkable contributions to pioneering big data projects with <a href="https://sing.uchicago.edu/2023/07/06/national-labs-enlist-uchicago-students-for-help-on-big-data-projects/" target="_blank">Fermilab</a>.</li>
+                <li><b>Graduate Course Grader:</b> Discrete Mathematics (Class Strength: 100), Machine Learning (Class Strength: 120)</li>
+            </ul>
+        </div>
+        <!-- End .education-block -->
+    </div>
+
+    <div class="education-block">
+        <a href="http://dtu.ac.in/" target="_blank"><img src="images/dtu.png" alt="Delhi Technological University Logo"></a>
+        <div>
+            <h3>Delhi Technological University</h3>
+            <span class="education-date">Aug 2018 - Aug 2022</span>
+            <h4>Bachelor of Technology in Engineering Physics</h4>
+            <ul>
+                <li>
+                    <b>Major:</b> Electronics; <b>Minor:</b> Robotics and Intelligent Systems
+                </li>
+                <li>
+                    <b>GPA:</b> 9.34/10.00; <b>Department Rank:</b> 3
+                </li>
+                <li>
+                    Winner at Techstars Startup Weekend, New Delhi organized by Google for Startups.
+                </li>
+                <li>
+                    Second at HackBattle 2020 organized by IEEE Computer Society. Project: AI for Sign Language Detection.
+                </li>
+                <li>
+                    Appointed as Technology Head at the Entrepreneurship Cell of Delhi Technological University (2020-21).
+                </li>
+            </ul>
+        </div>
+        <!-- End .education-block -->
+    </div>
+</div>    <!-- End #education -->
+
+<style>
+    .project {
+        display: flex;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+        height: 100%; /* Set a fixed height or 'auto' depending on your preference */
+    }
+
+    .project-image {
+        width: 30%; /* Set width for the image container */
+        flex-shrink: 0; /* Prevent image from shrinking */
+    }
+
+    .project-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .project-info {
+        padding: 20px;
+        overflow: hidden; /* Ensure text stays within its container */
+        max-width: 70%; /* Set maximum width for the info container */
+        box-sizing: border-box; /* Include padding and border in total width and height */
+    }
+
+    .project-info h3 {
+        margin-top: 0;
+        margin-bottom: 10px; /* Add space between title and description */
+    }
+
+    .project-info p {
+        margin-top: 0; /* Remove top margin for description */
+        margin-bottom: 10px; /* Add space between description and link */
+    }
+
+    .project-info a {
+        display: block; /* Make the link a block element */
+        text-decoration: none;
+        color: #007bff;
+        margin-top: 10px; /* Add margin to the top of the link */
+    }
+
+    .project-info a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/crypto_proj.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Reinforcement-Learning Based Cryptocurrency Trading Bot</h3>
+                        <p>
+                            Engineered a Recurrent Proximal Policy Optimization model, trained on 2023 Quarters 1 and 2 OHLCVT data with MACD and RSI achieving a peak reward of $97 ($1000 investment) over 100 episodes during 2023 Quarter 3 testing.
+                            Integrated the model with Kraken API and live websockets for real-time trading data and executed successful live trades, investing $30 and generating $0.1 over a 5-hour period, demonstrating practical viability in real-time trading.
+                        </p>
+                        <a href="https://github.com/tarun2k/crypto-trading-bot">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/genai_proj.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>GenClean: Advanced Data Cleaning and Analysis Platform</h3>
+                        <p>
+                            GenClean is an innovative project that streamlines data processing and analysis using Generative AI tools like the Langchain Agent. It ensures data privacy and integrity by restricting direct access to file contents. Users interact through a user-friendly Streamlit interface, using natural language to request data cleaning and analysis. GenClean generates and displays plots based on user input, offering a seamless experience for data exploration and visualization.
+                        </p>
+                        <a href="https://github.com/tarun2k/genai-data-analysis">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/semi_proj.webp" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Semiconductor Wafer Map Defect Classification using Transfer Learning</h3>
+                        <p>
+                            Semiconductor chip manufacturing is costly and time-consuming, with testing being a major contributor to production costs. Detecting and labeling wafer map defects during manufacturing is crucial for identifying their causes. In this paper, we compare various transfer learning methods, including VGG19, MobileNet, ResNet, and DenseNet, for classifying wafer map defects using the WM811K dataset. We consolidated the eight defect classes into four, achieving a highest accuracy of 95.56% with VGG19.
+                        </p>
+                        <a href="https://ieeexplore.ieee.org/document/9753436">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/iot_proj" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>IoT based Weather Monitoring System</h3>
+                        <p>
+                            This project showcases an IoT-based environmental monitoring system using Arduino UNO and ESP8266, with data visualized on Google Sheets. By programming the Arduino UNO and ESP8266 modules, environmental data such as temperature, humidity, gas levels, and solar cell voltage are collected and transmitted. The system leverages Google Sheets for real-time data visualization, making it accessible and user-friendly. 
+                        </p>
+                        <a href="https://github.com/tarun2k/Weather-Monitoring-IoT">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>Haskell</li>
+            <li>Machine Learning</li>
+            <li>Deep Learning</li>
+            <li>Generative AI</li>
+            <li>Reinforcement Learning</li>
+            <li>Natural Language Processing</li>
+            <li>Django</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>SQL</li>
+            <li>Git</li>
+            <li>Docker</li>
+            <li>Bash Scripting</li>
+            <li>Distributed Computing</li>
+            <li>Product Management</li>
+            <li>Data Analytics</li>
+            <li>Data Science</li>
+            <li>Data Engineering</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form id="my-form" action="https://formspree.io/f/mdoqjqga" method="POST">
+                <label>Email:</label>
+                <input type="email" name="email" />
+                <label>Message:</label>
+                <input type="text" name="message" />
+                <button id="my-form-button">Submit</button>
+                <p id="my-form-status"></p>
+              </form>
+                    </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; <span id="current-year">2024</span> Tarun Arora
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/tarun2k" target=""><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://www.linkedin.com/in/tarun-arora-dtu/" target=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+
+    <script>
+        var form = document.getElementById("my-form");
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("my-form-status");
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              status.innerHTML = "Thanks for your submission!";
+              form.reset()
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
+      </script>
+
+</body>
+
+</html>
